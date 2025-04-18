@@ -45,17 +45,19 @@ menuentry "Kernel 420" {
 grub-mkrescue -o kernel.iso iso/
 ```
 Then to boot using qemu you can either :
-1- ```bash
+1- Use the ISO:
+```bash
 qemu-system-i386 -cdrom kernel.iso
-``` if you want to use the iso.
-2- ```bash
+```
+
+2- Use the binary directly:
+```bash
 qemu-system-i386 -kenel iso/boot/kernel
 ```
-if you want to use the binary directly.
 
 ### 🔧 Requirements (on Arch Linux)
 - An x86 computer.
-- ```bash
+- Packages:
+```bash
 sudo pacman -S qemu-full grub xorriso nasm ld gcc
 ```
-
