@@ -50,7 +50,8 @@ qemu-system-i386 -cdrom kernel.iso
 ``` if you want to use the iso.
 2- ```bash
 qemu-system-i386 -kenel iso/boot/kernel
-``` if you want to use the binary directly.
+```
+if you want to use the binary directly.
 
 ### 🔧 Requirements (on Arch Linux)
 - An x86 computer.
