@@ -45,6 +45,7 @@ menuentry "Kernel 420" {
 grub-mkrescue -o kernel.iso iso/
 ```
 Then to boot using qemu you can either :
+
 1- Use the ISO:
 ```bash
 qemu-system-i386 -cdrom kernel.iso
