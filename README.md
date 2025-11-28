@@ -26,7 +26,7 @@ gcc -m32 -c kernel.c -o kc.o
 
 - Link the object files:
 ```bash
-ld -m elf_i386 -T link.ld -o kernel kasm.o kc.o
+ld -m elf_i386 -T link.ld -o iso/boot/kernel kasm.o kc.o
 ```
 
 - Edit the grub.cfg file if you want to use one:
