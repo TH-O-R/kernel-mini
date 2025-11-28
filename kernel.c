@@ -1,14 +1,17 @@
 /* kernel.c */
 
-#define VID_MEM ((char*)0xb8000)
+typedef unsigned char uint8_t;
+typedef unsigned int uint32_t;
+
+#define VID_MEM ((uint8_t*)0xb8000)
 #define LIGHT_GREY_ON_BLACK 0x07
 
 void kmain(void) {
     const char *str = "Hello, Kernel! This is my first kernel";
-    char *vidptr = VID_MEM; // Video Memory begins here
+    uint8_t *vidptr = VID_MEM; // Video Memory begins here
     // two variables for looping
-    unsigned int i = 0;
-    unsigned int j = 0;
+    uint32_t i = 0;
+    uint32_t j = 0;
 
     /* This loop clears the screen */
     /* 25 lines and 80 columns each element takes 2 bytes */
