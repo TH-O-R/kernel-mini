@@ -53,7 +53,7 @@ qemu-system-i386 -cdrom kernel.iso
 
 2- Use the binary directly:
 ```bash
-qemu-system-i386 -kenel iso/boot/kernel
+qemu-system-i386 -kernel iso/boot/kernel
 ```
 
 ### 🔧 Requirements (on Arch Linux)
@@ -61,4 +61,9 @@ qemu-system-i386 -kenel iso/boot/kernel
 - Packages:
 ```bash
 sudo pacman -S qemu-full grub xorriso nasm ld gcc
+```
+>**note**: you can also use `qemu-base` instead of `qemu-full` but you will need a VNC viewer of some kind to see the results.
+- Packages (alt):
+```bash
+sudo pacman -S qemu-base grub xorriso nasm ld gcc tigervnc
 ```
