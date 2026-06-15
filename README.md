@@ -18,15 +18,15 @@ This project is a **minimal kernel written from scratch in C**, showing the bare
 ---
 
 ## 🛠 How to Build & Run
-- Create object files from `kernel.asm` and `kernel.c`:
+- Building is easy and requires typing only one command:
 ```bash
-nasm -f elf32 kernel.asm -o kasm.o
-gcc -m32 -c kernel.c -o kc.o
+make
 ```
+This will create object files from `kernel.asm` and `kernel.c` then link them to get the raw kernel binary.
 
-- Link the object files:
+- You can also use this command after making the kernel binary to get a bootable ISO:
 ```bash
-ld -m elf_i386 -T link.ld -o iso/boot/kernel kasm.o kc.o
+make iso
 ```
 
 - Edit the grub.cfg file if you want to use one:
@@ -40,10 +40,6 @@ menuentry "Kernel 420" {
 }
 ```
 
-- If you want to create the ISO:
-```bash
-grub-mkrescue -o kernel.iso iso/
-```
 Then to boot using qemu you can either :
 
 1- Use the ISO:
@@ -57,7 +53,7 @@ qemu-system-i386 -kernel iso/boot/kernel
 ```
 
 ### 🔧 Requirements (on Arch Linux)
-- An x86 computer.
+- An x86 capable computer.
 - Packages:
 ```bash
 sudo pacman -S qemu-full grub xorriso nasm ld gcc

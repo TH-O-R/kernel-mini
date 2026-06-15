@@ -25,7 +25,7 @@ void clear_screen(uint8_t *vidptr) {
 void write_string(uint8_t *vidptr, const char *str) {
     uint32_t i = 0;
     while (*str) {
-        vidptr[i] = *str;             // ASCII character
+        vidptr[i] = *str;                      // ASCII character
         vidptr[i + 1] = LIGHT_GREY_ON_BLACK;  // Attribute byte
         ++str;
         i += 2; // Advance by 2 since we write 2 bytes each time
